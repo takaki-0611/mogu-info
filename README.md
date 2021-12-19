@@ -33,4 +33,4 @@ https://docs.google.com/spreadsheets/d/1gKXXLX9ITjVb331lYfAfy9Npu9v6ltGbJLGIPpxX
 - IDE：Cloud9
 
 ## 使用素材
-- ぱくたそ（画
+- ぱくたそ（画像）
