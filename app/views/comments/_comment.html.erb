@@ -1,0 +1,17 @@
+<h2>Comments</h2>
+<% post.comments.each do |comment| %>
+  <table class='table'>
+    <tr>
+  		<td>
+  		  <p><%= attachment_image_tag(comment.user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %></p>
+  		  <p><%= comment.user.name %></p>
+  		</td>
+  		<td><%= comment.comment %></td>
+  		<td>
+  		  <% if comment.user == current_user %>
+  		    <%= link_to 'Destroy', post_comment_path(comment.post, comment), method: :delete, remote: true, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger"%>
+  		  <% end %>
+  		</td>
+    <tr>
+  </table>
+<% end %>

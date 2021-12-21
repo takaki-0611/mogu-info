@@ -1,2 +1,17 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<div class="carousel-inner">
+  <div class="cover-text">
+    <b><h1>mogu-infoへようこそ！</h1>
+    <br><br><br>
+    <p class="text-center">
+    会員でない方も閲覧はできますが<br><br>
+    投稿するには
+    <u><%= link_to "会員登録", new_user_registration_path %></u>
+    が必要になります</p></b>
+  </div>
+
+  <div class="container posts mb-3">
+    <div class="row">
+      <%= link_to "すべての投稿を見る>>", posts_path %>
+    </div>
+  </div>
+</div>
