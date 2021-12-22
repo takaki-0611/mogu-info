@@ -17,9 +17,21 @@
         <%= f.text_area :introduction, class: "form-control introduction" %>
       </div>
       <div class="form-group">
-        <%= f.submit "編集内容を保存する", class: "btn btn-success mr-5" %>
-        <%= link_to "退会する", quit_users_path, class: "btn btn-danger ml-5" %>
+        <%= f.submit "編集内容を保存する", class: "btn btn-outline-success mr-5" %>
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p class="text-center">
+        退会される方は
+        <u><%= link_to "こちら", quit_users_path %></u>
+        から
+      </p>
     <% end %>
   </div>
 </div>
