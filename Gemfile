@@ -71,3 +71,6 @@ gem 'font-awesome-sass', '~> 5.13'
 gem 'jquery-rails' #css機能
 gem 'dotenv-rails' #環境変数を管理。パスワードや外部APIキーを環境変数として管理
 gem 'rubocop-rails' #Railsに関わる構文規則チェック
+group :production do
+  gem 'mysql2'
+end
