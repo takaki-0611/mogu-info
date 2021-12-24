@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :ensure_correct_user, { only: %i[edit update] }
+
   def index
     @post = Post.new
     @posts = Post.all
@@ -15,7 +17,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to post_path(@post.id), notice: "投稿完了しました"
+      redirect_to post_path(@post.id), notice: '投稿完了しました'
     else
       @posts = Post.all
       render 'index'
@@ -29,9 +31,9 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to post_path(@post), notice: "投稿の修正が完了しました"
+      redirect_to post_path(@post), notice: '投稿の修正が完了しました'
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -43,9 +45,7 @@ class PostsController < ApplicationController
 
   def ensure_correct_user
     @post = Post.find(params[:id])
-    if current_user != @post.user
-      redirect_to posts_path
-    end
+    redirect_to posts_path if current_user != @post.user
   end
 
   private
