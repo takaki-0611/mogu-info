@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_19_072026) do
+ActiveRecord::Schema.define(version: 2022_01_03_094633) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2021_12_19_072026) do
     t.float "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "inmage_id"
+    t.string "image_id"
   end
 
   create_table "users", force: :cascade do |t|
