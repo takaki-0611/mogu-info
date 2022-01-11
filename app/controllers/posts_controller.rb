@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :ensure_correct_user, { only: %i[edit update] }
+  before_action :ensure_correct_user, { only: %i[edit update destroy] }
 
   def index
     @post = Post.new
