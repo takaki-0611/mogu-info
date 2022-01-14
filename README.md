@@ -30,7 +30,7 @@ https://docs.google.com/spreadsheets/d/1cLEOXWatGRDDtIHwupOIJX3m8E-JSrMSIbRrn709
 https://docs.google.com/spreadsheets/d/1gKXXLX9ITjVb331lYfAfy9Npu9v6ltGbJLGIPpxX4sA/edit#gid=0
 
 ## 開発環境
-- OS：Windows10
+- OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
