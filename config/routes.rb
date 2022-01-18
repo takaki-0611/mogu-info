@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'homes#top'
   get '/about' => 'homes#about'
   resources :users, only: %i[show index edit update] do
+    member do
+      get :favorites
+    end
     collection do
       get 'quit'
       patch 'out'

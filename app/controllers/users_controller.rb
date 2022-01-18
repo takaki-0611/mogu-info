@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :ensure_correct_user, only: %i[update edit]
+  before_action :ensure_correct_user, only: [:update, :edit, :favorites]
 
   def index
     @users = User.all
@@ -9,6 +9,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
+    favorites = Favorite.where(user_id: current_user.id).pluck(:post_id)
+    @favorite_post = Post.find(favorites)
     @post = Post.new
   end
 
@@ -25,7 +27,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def quit; end
+  def quit;
+  end
 
   def out
     @user = current_user
@@ -33,6 +36,11 @@ class UsersController < ApplicationController
     reset_session
     flash[:notice] = 'ありがとうございました。またのご利用を心よりお待ちしております。'
     redirect_to root_path
+  end
+
+  def favorites
+    favorites = Favorite.where(user_id: @user.id).pluck(:post_id)
+    @favorite_posts = Post.find(favorites)
   end
 
   private
